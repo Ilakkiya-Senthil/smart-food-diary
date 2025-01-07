@@ -9,68 +9,47 @@
 
 body {
     background-image: url('https://i.postimg.cc/K8jQbK4X/Whats-App-Image-2024-11-25-at-20-57-41-b921d103.jpg');
+
     display: flex;
-    height: 100vh;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    color: #fff; /* Default text color is white */
-    width: 80vw; /* 80% of the viewport width */
-    margin: 0 auto; /* Center the page horizontally */
+    color: #fff;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
 }
-.invalid {
-    border: 1px solid red;
-}
-.error-message {
-    color: red;
-    font-size: 0.875em;
-}
-
 
 .container {
     max-width: 500px;
     width: 100%;
-    background:  #dbf7d2; /* White container */
-    color: #000; /* Black text inside the container */
+    background: #dbf7d2;
+    color: #000;
     padding: 15px 10px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
 }
 
 .container .title {
     font-size: 25px;
     font-weight: 500;
-    position: relative;
-    color: #000; /* Black title */
-}
-
-.container .title::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 30px;
-    background-color: #000; /* Black underline */
+    color: #000;
 }
 
 .container form .user-details {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px 0 12px 0;
+    flex-direction: column;
+    gap: 15px;
 }
 
 form .user-details .input-box {
-    margin: 15px;
-    width: calc(100% / 2 - 20px);
+    width: 100%;
 }
 
 .user-details .input-box .details {
     display: block;
     font-weight: 600;
     margin-bottom: 5px;
-    color: #000; /* Black labels */
 }
 
 .user-details .input-box input {
@@ -78,59 +57,18 @@ form .user-details .input-box {
     width: 100%;
     outline: none;
     border-radius: 10px;
-    border: 1.5px solid #ccc; /* Light gray border */
+    border: 1.5px solid #ccc;
     padding-left: 15px;
     font-size: 16px;
     border-bottom-width: 2px;
-    background-color: #fff; /* White input background */
-    color: #000; /* Black input text */
+    background-color: #fff;
+    color: #000;
     transition: all 0.3s ease;
 }
 
 .user-details .input-box input:focus,
 .user-details .input-box input:valid {
-    border-color: #000; /* Black border on focus */
-}
-
-form .gender-details .gender-title {
-    font-size: 20px;
-    font-weight: 500;
-    color: #000; /* Black gender title */
-}
-
-form .gender-details {
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-form .gender-details .category {
-    display: flex;
-    width: 80%;
-    margin: 14px 0;
-    justify-content: space-between;
-}
-
-.gender-details .category label {
-    display: flex;
-    align-items: center;
-    color: #000; /* Black labels */
-}
-
-.gender-details .category .dot {
-    height: 18px;
-    width: 18px;
-    background: #ccc; /* Light gray dots */
-    border-radius: 50%;
-    margin-right: 10px;
-    border: 5px solid transparent;
-    transition: all 0.3s ease;
-}
-
-#dot-1:checked~.category .one,
-#dot-2:checked~.category .two,
-#dot-3:checked~.category .three {
-    border-color: #ccc; /* Gray border for checked */
-    background: #000; /* Black filled dots */
+    border-color: #000;
 }
 
 form .button {
@@ -143,54 +81,36 @@ form .button input {
     height: 100%;
     width: 100%;
     outline: none;
-    color: #fff; /* White text */
+    color: #fff;
     border: none;
     font-size: 18px;
     font-weight: 500;
     border-radius: 10px;
     letter-spacing: 1px;
-    background: #000; /* Black button */
+    background: #000;
     transition: 0.3s ease;
 }
 
 form .button input:hover {
-    background: #333; /* Dark gray hover effect */
+    background: #333;
 }
 
-.p {
-    text-align: center;
-    color: #fff; /* White text for paragraph */
-    font-size: 14px;
-    margin: 5px 0;
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
 }
 
-
-@media (max-width: 584px) {
+@media (max-width: 480px) {
     .container {
         max-width: 100%;
     }
 
-    form .user-details .input-box {
-        margin-bottom: 15px;
+    .container .title {
+        font-size: 20px;
+    }
+
+    .user-details .input-box {
         width: 100%;
-    }
-
-    form .category {
-        width: 100%;
-    }
-
-    .content form .user-details {
-        max-height: 300px;
-        overflow-y: scroll;
-    }
-
-    .user-details::-webkit-scrollbar {
-        width: 5px;
-    }
-}
-
-@media (max-width: 459px) {
-    .container .content .category {
-        flex-direction: column;
     }
 }
